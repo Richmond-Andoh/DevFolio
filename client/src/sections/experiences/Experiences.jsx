@@ -9,8 +9,8 @@ const Experiences = () => {
     <div className='pb-10 pt-20'>
         <SectionsTtitle title="Experience" />
 
-        <div className="flex py-10">
-            <div className='flex flex-col gap-5 border-l-2 border-teal-700'>
+        <div className="flex py-10 gap-20 sm:flex-col">
+            <div className='flex flex-col gap-10 border-l-2 border-teal-700 w-1/3 sm:w-full sm:overflow-x-scroll sm:flex-row'>
                 {
                     experiences.map((experience, idx) => (
                         <div className='cursor-pointer' onClick={() => setselectedPeriodIndex(idx)} key={idx}>
@@ -18,6 +18,16 @@ const Experiences = () => {
                         </div>
                     ))
                 }
+            </div>
+
+            <div className="flex flex-col gap-10">
+                <h1 className="text-primary">{experiences[selectedPeriodIndex].title}</h1>
+                <p>
+                 {experiences[selectedPeriodIndex].company}
+                </p>
+                <p>
+                  {experiences[selectedPeriodIndex].description}
+                </p>
             </div>
         </div>
     </div>

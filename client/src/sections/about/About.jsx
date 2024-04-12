@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <div>
-      <SectionsTtitle title="About Me" />
+       <SectionsTtitle title="About Me" />
 
         <div className="flex w-full items-center sm:flex-col-reverse md:flex-col-reverse">
             <div className="h-[70vh] w-1/2 sm:w-full md:w-full">
