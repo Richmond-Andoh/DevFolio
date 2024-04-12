@@ -2,7 +2,7 @@
 const Header = () => {
   return (
     <div>
-        <div className="navbar font-semibold text-primary py-3 bg-primary-content bg-primary-content/20 shadow-xl ring-1 ring-black/5">
+        <div className="navbar font-semibold text-primary py-3 bg-primary-content shadow-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
