@@ -8,7 +8,7 @@ const Intro = () => {
         <p className="text-white w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id deserunt exercitationem eius, rerum architecto earum ex 
             dolore minus consequatur totam maiores culpa odit
         </p>
-        <button className="btn text-tertiary border-tertiary px-9 py-4 text-center">Get Started</button>
+        <button className="text-teal border border-teal px-9 py-4 text-center">Get Started</button>
 
     </div>
   )
