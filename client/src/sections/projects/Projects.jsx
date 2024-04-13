@@ -8,8 +8,8 @@ const Projects = () => {
     <div className="pb-10 pt-18">
       <SectionsTitle title="Projects" />
 
-      <div className="flex py-10 gap-20 sm:flex-col">
-        <div className="flex flex-col gap-10 border-l-2 border-teal-700 w-1/3 sm:w-full sm:overflow-x-scroll sm:flex-row">
+      <div className="flex py-10 gap-20 sm:flex-col flex-row-reverse">
+        <div className="flex flex-col gap-10 border-r-2 border-teal-700 w-1/3 sm:w-full sm:overflow-x-scroll sm:flex-row">
           {projects.map((project, idx) => (
             <div
               className="cursor-pointer"
@@ -19,7 +19,7 @@ const Projects = () => {
               <h1
                 className={`text-xl px-5 ${
                   selectedProjectIndex === idx
-                    ? "text-teal-600 border-l-4 -ml-[3px] bg-teal-500 opacity-60 py-3"
+                    ? "text-teal-600 border-r-4 -ml-[3px] bg-teal-500 opacity-60 py-3"
                     : "text-white"
                 } text-white`}
               >
