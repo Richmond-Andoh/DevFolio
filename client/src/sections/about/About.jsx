@@ -18,7 +18,7 @@ const About = () => {
   ];
 
   return (
-    <div>
+    <div className="pt-12">
       <SectionsTitle title="About Me" />
 
       <div className="flex w-full items-center sm:flex-col-reverse md:flex-col-reverse">
