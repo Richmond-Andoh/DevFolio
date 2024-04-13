@@ -14,7 +14,7 @@ const Contact = () => {
     <div className="pb-10 pt-12">
       <SectionsTittle title="Say Hello" />
 
-      <div className="flex ">
+      <div className="flex items-center justify-between sm:flex-col">
         <div className="flex flex-col gap-5">
           <h1 className="text-white">{"{"}</h1>
           {Object.keys(user).map((key) => (
@@ -27,13 +27,15 @@ const Contact = () => {
           ))}
           <h1 className="text-white">{"}"}</h1>
         </div>
-        <div>
+        {/* <div className="flex">
+            <h1 className="text-primary text-3xl">OR</h1>
+        </div> */}
+        <div className="h-[450px]">
           <lottie-player
             src="https://lottie.host/cab292f5-8a0b-4703-8023-421baa79b7f4/69Hkye5aVK.json"
             background="transparent"
             speed="1"
             loop
-            controls
             autoplay
             direction="1"
             mode="normal"
