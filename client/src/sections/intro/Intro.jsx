@@ -13,9 +13,14 @@ const Intro = () => {
         exercitationem eius, rerum architecto earum ex dolore minus consequatur
         totam maiores culpa odit
       </p>
-      <button className="text-teal border border-teal px-9 py-4 text-center">
-        Get Started
-      </button>
+      <div className="flex gap-5">
+        <button className="text-teal border border-teal px-9 py-4 text-center">
+          Get Started
+        </button>
+        <button className="text-teal border border-teal px-9 py-4 text-center">
+          Hire Me
+        </button>
+      </div>
     </div>
   );
 };
