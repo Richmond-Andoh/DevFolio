@@ -1,4 +1,5 @@
-import Header from "../../components/Header"
+import Header from "../../components/header/Header"
+import Footer from "../../components/footer/Footer";
 import About from "../about/About";
 import Contact from "../contact/Contact";
 import Experiences from "../experiences/Experiences";
@@ -7,7 +8,7 @@ import Projects from "../projects/Projects";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-primary-content">
       <Header />
       <div className="bg-primary-content px-40 sm:px-5">
         <Intro />
@@ -16,6 +17,7 @@ const Home = () => {
         <Projects />
         <Contact />
       </div>
+      <Footer />
     </div>
   )
 }
