@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-key */
-import SectionsTtitle from "../../components/SectionsTtitle";
+import SectionsTitle from "../../components/SectionsTitle";
     
 const About = () => {
 
@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <div>
-       <SectionsTtitle title="About Me" />
+       <SectionsTitle title="About Me" />
 
         <div className="flex w-full items-center sm:flex-col-reverse md:flex-col-reverse">
             <div className="h-[70vh] w-1/2 sm:w-full md:w-full">
@@ -52,8 +52,8 @@ const About = () => {
             <h1 className="text-teal text-xl">Here are Some Few Technologies I've been Working with recently;</h1>
             <div className="flex flex-wrap gap-10 mt-5">
                 {
-                    skills.map((skill) => (
-                        <div className="border border-teal px-5 py-3">
+                    skills.map((skill, idx) => (
+                        <div className="border border-teal px-5 py-3" key={idx}>
                             <h1 className="text-teal">{skill}</h1>
                         </div>
                     ))

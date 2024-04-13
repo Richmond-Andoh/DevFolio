@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SectionsTtitle from '../../components/SectionsTtitle'
+import SectionsTitle from '../../components/SectionsTitle'
 import { experiences } from '../../resources/experience'
 
 const Experiences = () => {
@@ -7,7 +7,7 @@ const Experiences = () => {
     const [selectedPeriodIndex, setselectedPeriodIndex] = useState(0)
   return (
     <div className='pb-10 pt-20'>
-        <SectionsTtitle title="Experience" />
+        <SectionsTitle title="Experience" />
 
         <div className="flex py-10 gap-20 sm:flex-col">
             <div className='flex flex-col gap-10 border-l-2 border-teal-700 w-1/3 sm:w-full sm:overflow-x-scroll sm:flex-row'>

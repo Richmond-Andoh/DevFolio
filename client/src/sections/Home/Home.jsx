@@ -2,6 +2,7 @@ import Header from "../../components/Header"
 import About from "../about/About";
 import Experiences from "../experiences/Experiences";
 import Intro from "../intro/Intro";
+import Projects from "../projects/Projects";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Intro />
         <About />
         <Experiences />
+        <Projects />
       </div>
     </div>
   )
