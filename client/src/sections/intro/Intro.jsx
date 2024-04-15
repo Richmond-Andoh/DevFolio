@@ -1,4 +1,4 @@
-import Profile from "../../../public/profileImg.png"
+import Profile from "/profileImg.png"
 
 const Intro = () => {
   return (
