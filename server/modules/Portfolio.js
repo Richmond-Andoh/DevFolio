@@ -152,5 +152,21 @@ const contactSchema = new  mongoos.Schema({
         type: String,
         required: true
     }
-})
+});
+
+const Intro = mongoose.model('Intro', introSchema);
+const About = mongoose.model('About', aboutSchema);
+const Experience = mongoose.model('Experience', experienceSchema);
+const Project = mongoose.model('Project', projectSchema);
+const Education = mongoose.model('Education', educationSchema);
+const Contact = mongoose.model('Contact', contactSchema);
+
+export default {
+    Intro,
+    About,
+    Experience,
+    Project,
+    Education,
+    Contact
+};
 
