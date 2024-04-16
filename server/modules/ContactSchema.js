@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const contactSchema = new  mongoos.Schema({
     name: {
         type: String,
