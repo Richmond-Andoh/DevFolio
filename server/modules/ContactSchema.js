@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
 const contactSchema = new  mongoos.Schema({
     name: {
@@ -31,3 +31,8 @@ const contactSchema = new  mongoos.Schema({
         required: true
     }
 });
+
+
+const Contact = mongoose.model("Contact", contactSchema);
+
+export default Contact;

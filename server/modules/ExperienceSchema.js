@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
 const experienceSchema = new mongoose.Schema({
     title: {
@@ -21,3 +21,7 @@ const experienceSchema = new mongoose.Schema({
         required: true
     },
 });
+
+const Experience = mongoose.model("Experience", experienceSchema);
+
+export default Experience;
