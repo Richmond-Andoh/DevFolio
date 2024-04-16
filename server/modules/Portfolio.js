@@ -98,10 +98,12 @@ const projectSchema = new mongoose.Schema({
         required: true
     },
 
-    teckStack: {
-        type: Array,
-        required: true
-    }
+    teckStack: [
+        {
+            type: Array,
+            required: true
+        }
+    ]
 });
 
 const educationSchema = new mongoose.Schema({
@@ -161,7 +163,7 @@ const Project = mongoose.model('Project', projectSchema);
 const Education = mongoose.model('Education', educationSchema);
 const Contact = mongoose.model('Contact', contactSchema);
 
-export default {
+export {
     Intro,
     About,
     Experience,
