@@ -1,11 +1,4 @@
-import {
-  Intro,
-  About,
-  Experience,
-  Project,
-  Education,
-  Contact,
-} from "../modules/portfolio";
+import { Intro, Education, Experience, Project, Contact, About } from "../modules/portfolio"
 
 export const getPortfolioData = async (req, res) => {
   try {

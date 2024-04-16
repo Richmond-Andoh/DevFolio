@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
 const projectSchema = new mongoose.Schema({
     title: {
@@ -28,3 +28,7 @@ const projectSchema = new mongoose.Schema({
         }
     ]
 });
+
+const Project = mongoose.model("Project", projectSchema);
+
+export default Project;

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
 const introSchema = new mongoose.Schema({
     welcomeText: {
@@ -31,3 +31,7 @@ const introSchema = new mongoose.Schema({
         require: true
     }
 });
+
+const  Intro = mongoose.model("Intro", introSchema);
+
+export default Intro;
