@@ -5,7 +5,7 @@ import {
   Project,
   Education,
   Contact,
-} from "../modules/Portfolio";
+} from "../modules/portfolio";
 
 export const getPortfolioData = async (req, res) => {
   try {
