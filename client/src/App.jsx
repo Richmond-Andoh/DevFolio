@@ -22,7 +22,8 @@ const App = () => {
         toast.success("successfull portfolio data fetch")
       }
 
-      console.log("Error : ", response.statusText);
+      console.log("Status : ", response.statusText);
+      toast.error("Unable to fetch portfolio data")
        
     } catch (error) {
       console.error(error.message)
