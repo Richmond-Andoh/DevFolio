@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./sections/Home/Home";
 import Loader from "./components/loader/Loader";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
 const App = () => {
