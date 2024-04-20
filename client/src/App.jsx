@@ -32,11 +32,6 @@ const App = () => {
     }
   }
   // Show the loader until data is fully loaded.
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
 
 
   useEffect(() => {
