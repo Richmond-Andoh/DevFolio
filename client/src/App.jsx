@@ -6,10 +6,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
-
+import { useDispatch } from "react-redux";
+import { SetPortfolioData } from "./reducer/rootSlice";
 const App = () => {
    
   const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
   
   const getPortfolioData = async () => {
     try {
@@ -18,7 +20,8 @@ const App = () => {
       const response = await axios.get("/api/portfolio/portfolio-data");
       
       if (response.status === 200) {
-        const  data = await response.data;
+        dispatch(SetPortfolioData(response.data));
+        //const  data = await response.data;
         console.log(data);
         toast.success("successfull portfolio data fetch")
       }
