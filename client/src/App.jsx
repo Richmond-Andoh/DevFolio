@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
+import { Provider } from "react-redux";
 const App = () => {
    
   const [isLoading, setIsLoading] = useState(true);
