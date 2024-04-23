@@ -22,7 +22,7 @@ const App = () => {
       if (response.status === 200) {
         dispatch(SetPortfolioData(response.data));
         //const  data = await response.data;
-        console.log(data);
+        console.log(response.data);
         toast.success("successfull portfolio data fetch")
       }
 
@@ -40,6 +40,7 @@ const App = () => {
 
   useEffect(() => {
     getPortfolioData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const [loading, setloading] = useState(false);

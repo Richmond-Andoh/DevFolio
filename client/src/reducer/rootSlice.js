@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const rootSlice = createSlice({
     name: "root",
-    innitialState: {
+    initialState: {
         loading: false,
         portfolioData: null
     },
