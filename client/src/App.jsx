@@ -6,16 +6,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SetPortfolioData } from "./reducer/rootSlice";
 const App = () => {
-   
-  const [isLoading, setIsLoading] = useState(true);
+  
   const dispatch = useDispatch();
+  const { loading, portfolioData} = useSelector((state) =>  state.root);
   
   const getPortfolioData = async () => {
     try {
-      setIsLoading(true);
+      //setIsLoading(true);
 
       const response = await axios.get("/api/portfolio/portfolio-data");
       
@@ -31,9 +31,10 @@ const App = () => {
        
     } catch (error) {
       console.error(error.message)
-    } finally {
-      setIsLoading(false)
     }
+    //  finally {
+    //   setIsLoading(false)
+    // }
   }
   // Show the loader until data is fully loaded.
 
@@ -43,7 +44,10 @@ const App = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
-  const [loading, setloading] = useState(false);
+  useEffect(() => {
+    console.log(portfolioData);
+  }, [])
+  // const [loading, setloading] = useState(false);
   return (
     <BrowserRouter>
     { loading ? <Loader /> : null}
