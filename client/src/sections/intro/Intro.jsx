@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import Profile from "/profileImg.png"
 
 const Intro = () => {
+
+  const { loading, portfolioData } = useSelector((state) => state.root);
   return (
     <div className="flex w-full items-center justify-center sm:flex-col-reverse sm:items-center sm:justify-center">
       <div className="h-[100vh] w-4/6 bg-primary-content flex flex-col items-start justify-center gap-9 py-10 sm:w-auto sm:h-auto">
