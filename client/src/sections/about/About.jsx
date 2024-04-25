@@ -1,21 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-key */
+import { useSelector } from "react-redux";
 import SectionsTitle from "../../components/SectionsTitle";
 
 const About = () => {
-  const skills = [
-    "HTML",
-    "CSS",
-    "TAILWIND",
-    "BOOTSTRAP",
-    "JAVASCRIPT",
-    "REACT",
-    "NODEJS",
-    "EXPRESS",
-    "MONGODB",
-    "DAISYUI",
-    "FIREBASE",
-  ];
+  const { portfolioData } = useSelector((state) => state.root);
+  const { about } = portfolioData;
+  const { description1, description2, skills } = about;
+
+  // const skills = [
+  //   "HTML",
+  //   "CSS",
+  //   "TAILWIND",
+  //   "BOOTSTRAP",
+  //   "JAVASCRIPT",
+  //   "REACT",
+  //   "NODEJS",
+  //   "EXPRESS",
+  //   "MONGODB",
+  //   "DAISYUI",
+  //   "FIREBASE",
+  // ];
 
   return (
     <div className="pt-12">
@@ -35,19 +40,11 @@ const About = () => {
         </div>
         <div className="flex flex-col gap-6 w-1/2 sm:w-full md:w-full">
           <p className="text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
-            quo, aspernatur consequuntur ea unde inventore similique earum
-            quisquam, doloremque molestiae, magnam impedit ipsam perspiciatis
-            harum porro quasi fugit deserunt.
+            { description1 || "" }
           </p>
 
           <p className="text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Perferendis vel natus aliquid repellendus a voluptate accusamus,
-            molestias cum modi ut labore culpa eveniet? Ratione expedita
-            necessitatibus, reiciendis assumenda repudiandae ipsam ab adipisci
-            eligendi quasi vel consequuntur sequi eius? Praesentium commodi
-            itaque rerum, dolore doloribus reprehenderit.
+            { description2 || "" }
           </p>
         </div>
       </div>
