@@ -50,7 +50,7 @@ const App = () => {
   // const [loading, setloading] = useState(false);
   return (
     <BrowserRouter>
-    { loading ? <Loader /> : null}
+    { loading ? <Loader /> : null }
       <Routes>
         <Route path="/" element={ <Home /> } />
       </Routes>
