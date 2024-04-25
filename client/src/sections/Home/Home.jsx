@@ -9,13 +9,13 @@ import LeftSider from "../../components/leftSider/LeftSider";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const  { loading } = useSelector((state) => state.root)
+  const  { portfolioData } = useSelector((state) => state.root)
   return (
     <div className="bg-primary-content">
       <Header />
       {
-        loading 
-        && 
+        portfolioData
+        && (
         <div className="bg-primary-content px-40 sm:px-5">
           <Intro />
           <About />
@@ -24,7 +24,7 @@ const Home = () => {
           <Contact />
           <Footer />
           <LeftSider />
-        </div>
+        </div>)
       }
       
     </div>
