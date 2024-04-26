@@ -8,6 +8,7 @@ import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { SetPortfolioData, hideloading, showloading } from "./reducer/rootSlice";
+import Admin from "./sections/Admin/Admin";
 const App = () => {
   //const [showloading, setshowloading] = useState(false)
   const dispatch = useDispatch();
@@ -53,6 +54,7 @@ const App = () => {
     { loading ? <Loader /> : null }
       <Routes>
         <Route path="/" element={ <Home /> } />
+        <Route path="/admin" element={ <Admin /> } />
       </Routes>
 
       <Toaster />
