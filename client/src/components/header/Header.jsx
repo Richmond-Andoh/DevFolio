@@ -46,9 +46,9 @@ const Header = () => {
           </h3>
         </div>
         <div className="navbar-end">
-          <button className="text-teal border border-teal px-6 py-2 text-center">
+          <a href="/admin" target="blank" className="text-teal border border-teal px-6 py-2 text-center">
             Admin
-          </button>
+          </a>
         </div>
       </div>
     </div>
