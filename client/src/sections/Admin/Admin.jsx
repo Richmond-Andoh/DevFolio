@@ -1,7 +1,10 @@
-
+import Header from "../../components/header/Header";
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div>
+      <Header />
+      div
+    </div>
   )
 }
 
