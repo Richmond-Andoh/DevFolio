@@ -1,7 +1,7 @@
 
 const LeftSider = () => {
   return (
-    <div className="fixed left-0 bottom-0 px-10 sm:static">
+    <div className="fixed left-0 bottom px-10 sm:static">
       <div className="flex flex-col">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
           <i className="ri-facebook-circle-line text-gray text-xl"></i>

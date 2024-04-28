@@ -1,10 +1,10 @@
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer";
-import About from "../about/About";
-import Contact from "../contact/Contact";
-import Experiences from "../experiences/Experiences";
-import Intro from "../intro/Intro";
-import Projects from "../projects/Projects";
+import About from "../../sections/about/About";
+import Contact from "../../sections/contact/Contact";
+import Experiences from "../../sections/experiences/Experiences";
+import Intro from "../../sections/intro/Intro";
+import Projects from "../../sections/projects/Projects";
 import LeftSider from "../../components/leftSider/LeftSider";
 import { useSelector } from "react-redux";
 
@@ -16,7 +16,7 @@ const Home = () => {
       {
         portfolioData
         && (
-        <div className="bg-primary-content px-40 sm:px-5">
+        <div className="px-40 sm:px-5">
           <Intro />
           <About />
           <Experiences />

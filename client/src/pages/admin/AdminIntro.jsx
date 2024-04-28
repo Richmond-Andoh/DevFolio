@@ -1,7 +1,9 @@
 
 const AdminIntro = () => {
   return (
-    <div>AdminIntro</div>
+    <div className="justify-center w-full">
+     
+    </div>
   )
 }
 
