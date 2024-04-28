@@ -3,14 +3,15 @@ import { useSelector } from "react-redux";
 const AdminIntro = () => {
 
   const { portfolioData } = useSelector((state) => state.root);
-
-  const handleFinish = (values) => {
+console.log(portfolioData.intro)
+  const onFinish = (values) => {
     console.log("Success:", values);
   }
   return (
+    
     <div className="justify-center items-center mx-auto mt-12">
-      <Form layout="vertical" onFinish={handleFinish}>
-        <Form.Item name="welcomTetxt" label="Welcome Text">
+      <Form layout="vertical" onFinish={onFinish} initialValues={portfolioData.intro}>
+        <Form.Item name="welcomeText" label="Welcome Text">
           <Input placeholder="Welcome Text" />
         </Form.Item>
 
