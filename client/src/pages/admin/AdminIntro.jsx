@@ -1,21 +1,22 @@
 import { Form, Input } from "antd";
 import { useSelector } from "react-redux";
+
 const AdminIntro = () => {
 
   const { portfolioData } = useSelector((state) => state.root);
   //const { intro } = portfolioData
-  console.log(portfolioData);
+  const intro = portfolioData ? portfolioData.intro : null;
+  console.log(intro);
 
-  // const onFinish = (values) => {
-  //   console.log("Success:", values);
-  // }
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
 
   return (
-    
     <div className="justify-center items-center mx-auto mt-12">
-      <Form layout="vertical" >
+      <Form layout="vertical" onFinish={onFinish} initialValues={intro}>
         <Form.Item name="welcomeText" label="Welcome Text">
-          <Input placeholder="Welcome Text" />
+          <Input placeholder="Welcome Text />
         </Form.Item>
 
         <Form.Item name="firstName" label="First Name">
