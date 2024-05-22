@@ -2,7 +2,7 @@ import Intro from "../modules/IntroSchema.js";
 
 const updateIntro = async(res, req) => {
    try {
-    const intro = await Intro.findByIdAndUpdate(
+    const intro = await Intro.findOneAndUpdate(
         {_id: req.body._id},
         req.body,
         { new: true }

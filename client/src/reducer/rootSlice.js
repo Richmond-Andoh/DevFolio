@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { createSlice } from "@reduxjs/toolkit";
+
 const rootSlice = createSlice({
     name: "root",
     initialState: {
