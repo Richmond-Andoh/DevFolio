@@ -1,4 +1,4 @@
-import Intro from "../modules/IntroSchema";
+import Intro from "../modules/IntroSchema.js";
 
 const updateIntro = async(res, req) => {
    try {
