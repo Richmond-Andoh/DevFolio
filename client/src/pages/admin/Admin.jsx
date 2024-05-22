@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import Header from "../../components/header/Header";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
@@ -5,12 +6,15 @@ import { Tabs } from "antd";
 const { TabPane } = Tabs;
 
 const Admin = () => {
+  const { portfolioData } = useSelector((state) => state.root);
   return (
     <div className="">
       <Header />
       <div className="mx-auto w-2/3">
         <div className="mt-12 px-6">
-          <Tabs>
+          {
+            portfolioData && 
+            <Tabs>
             <TabPane tab="Intro" key="1">
               <AdminIntro />
             </TabPane>
@@ -19,6 +23,7 @@ const Admin = () => {
               <AdminAbout />
             </TabPane>
           </Tabs>
+          }
         </div>
       </div>
     </div>
