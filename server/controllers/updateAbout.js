@@ -8,11 +8,12 @@ const updateAbout = async(req, res) => {
          { new: true }
      );
   
-     
+
      if(!about){
        res.status(404).send({
          success: false,
          message: "Intro Not found"
+         
        });
      }
   
