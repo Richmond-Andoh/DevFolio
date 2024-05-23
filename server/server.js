@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/api/portfolio", portfolioRouter);
 app.get( "/", (req, res) => {
     res.send("Welcome to the main Application")
-})
+});
 
 const startServer = () => {
     connection();
