@@ -12,7 +12,7 @@ const updateAbout = async(req, res) => {
      if(!about){
        res.status(404).send({
          success: false,
-         message: "Intro Not found"
+         message: "About Not found"
          
        });
      }

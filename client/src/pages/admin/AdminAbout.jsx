@@ -13,6 +13,8 @@ const AdminAbout = () => {
 
   const onFinish = async(values) => {
     try {
+      const tempSkills = values.skills.split(",");
+      values.skills = tempSkills;
       dispatch(showloading());
       const response = await axios.post("/api/portfolio/update-about", {
         ...values,
@@ -34,8 +36,11 @@ const AdminAbout = () => {
 
   return (
     <div className="justify-center items-center mx-auto mt-12">
-      <Form layout="vertical" onFinish={onFinish} initialValues={portfolioData?.about}>
-        <Form.Item name="welcomeText" label="Lottie URL">
+      <Form layout="vertical" onFinish={onFinish} 
+          initialValues={
+            portfolioData?.about}
+      >
+        <Form.Item name="lottieUrl" label="Lottie URL">
           <Input placeholder="Welcome Text" />
         </Form.Item>
 
@@ -45,6 +50,10 @@ const AdminAbout = () => {
 
         <Form.Item name="description2" label="Description">
           <textarea placeholder="description2"></textarea>
+        </Form.Item>
+
+        <Form.Item name="skills" label="Skills">
+          <textarea placeholder="skills"></textarea>
         </Form.Item>
 
         <div className="justify-end flex w-full">
