@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
 import { Tabs } from "antd";
+import AdminExperience from "./AdminExperience";
 const { TabPane } = Tabs;
 
 const Admin = () => {
@@ -21,6 +22,10 @@ const Admin = () => {
 
             <TabPane tab="About" key="2">
               <AdminAbout />
+            </TabPane>
+
+            <TabPane tab="Experience" key="3">
+              <AdminExperience />
             </TabPane>
           </Tabs>
           }
