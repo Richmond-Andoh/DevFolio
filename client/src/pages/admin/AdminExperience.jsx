@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 const AdminExperience = () => {
-  //const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
-  const { experience } = portfolioData
+  const { experiences } = portfolioData
   //const experience = portfolioData ? portfolioData.experience : null;
   console.log(portfolioData?.experience);
 
@@ -35,8 +36,20 @@ const AdminExperience = () => {
 
 
   return (
-    <div className="grid ">
-     
+    <div className="grid grid-cols-4 gap-6">
+      { experiences.map((experience) => {
+        <div className="border border-gray-600">
+            <h1>{experience.title}</h1>
+            <h1>{experience.period}</h1>
+            <h1>{experience.company}</h1>
+            <h1>{experience.description}</h1>
+
+            <div className="flex">
+               <button className="bg-primary text-white px-4 py-2">Edit</button>
+               <button className="text-white px-4 py-2 bg-red-600">Delete</button>
+            </div>
+        </div>
+      })}
     </div>
   );
 };
