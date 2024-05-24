@@ -11,23 +11,23 @@ const Admin = () => {
   return (
     <div className="">
       <Header />
-      <div className="mx-auto w-2/3">
+      <div className="mx-auto w-3/3">
         <div className="mt-12 px-6">
           {
             portfolioData && 
             <Tabs>
-            <TabPane tab="Intro" key="1">
-              <AdminIntro />
-            </TabPane>
+              <TabPane tab="Intro" key="1">
+                <AdminIntro />
+              </TabPane>
 
-            <TabPane tab="About" key="2">
-              <AdminAbout />
-            </TabPane>
+              <TabPane tab="About" key="2">
+                <AdminAbout />
+              </TabPane>
 
-            <TabPane tab="Experience" key="3">
-              <AdminExperience />
-            </TabPane>
-          </Tabs>
+              <TabPane tab="Experience" key="3">
+                <AdminExperience />
+              </TabPane>
+            </Tabs>
           }
         </div>
       </div>
