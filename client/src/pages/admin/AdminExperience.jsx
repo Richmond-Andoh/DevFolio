@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-key */
-import { Modal } from "antd";
+import { Form, Input, Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+
 //import { Form, Input, message } from "antd";
 //import { showloading, hideloading } from "../../reducer/rootSlice";
 //import axios   from "axios";
@@ -39,6 +41,13 @@ const AdminExperience = () => {
 
   return (
     <div>
+      <div className="flex justify-end">
+        <button className="bg-primary-content px-5 py-2 text-white"
+         onClick={() => ( setselectedItemForEdit(null), setshowAddEditModal(true))}
+        >
+          Add Experience
+        </button>
+      </div>
       <div className="grid grid-cols-4 gap-5">
         {experiences.map((experience) => (
           <div className="shadow-xl border border-gray-600 px-5 py-2 flex flex-col gap-3">
@@ -56,8 +65,41 @@ const AdminExperience = () => {
               </button>
             </div>
 
-            <Modal visible={showAddEditModal} title={selectedItemForEdit ? "Edit Experience" : "Add Experience" }>
-              
+            <Modal
+              visible={showAddEditModal}
+              title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
+              footer={null}
+              onCancel={() => setshowAddEditModal(false)}
+            >
+              <Form layout="vertical">
+                <Form.Item name="period" label="Period">
+                  <Input placeholder="Period" />
+                </Form.Item>
+
+                <Form.Item name="title" label="Title">
+                  <Input placeholder="Title" />
+                </Form.Item>
+
+                <Form.Item name="company" label="Company">
+                  <Input placeholder="Company" />
+                </Form.Item>
+
+                <Form.Item name="description" label="Description">
+                  <Input placeholder="Description" />
+                </Form.Item>
+
+                <div className="flex gap-5 justify-end">
+                  <buttton
+                    className="border border-red-600 cursor-pointer text-center px-5 py-2"
+                    onClick={() => setshowAddEditModal(false)}
+                  >
+                    Cancel
+                  </buttton>
+                  <buttton className="bg-primary-content text-white px-5 py-2 cursor-pointer">
+                    {selectedItemForEdit ? "Update" : "Add"}
+                  </buttton>
+                </div>
+              </Form>
             </Modal>
           </div>
         ))}
