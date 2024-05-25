@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-key */
-import { Form, Input, Modal } from "antd";
+import { Form, Input, Modal, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { showloading, hideloading } from "../../reducer/rootSlice";
+import axios from "axios";
 
 //import { Form, Input, message } from "antd";
 //import { showloading, hideloading } from "../../reducer/rootSlice";
@@ -17,27 +19,26 @@ const AdminExperience = () => {
   const { experiences } = portfolioData;
   console.log(experiences);
 
-  //   const onFinish = async(values) => {
-  //     try {
-  //       const tempSkills = values.skills.split(",");
-  //       values.skills = tempSkills;
-  //       dispatch(showloading());
-  //       const response = await axios.post("/api/portfolio/update-experience", {
-  //         ...values,
-  //         _id: portfolioData.experience._id
-  //       });
+    const onFinish = async(values) => {
+      try {
+        const tempSkills = values.skills.split(",");
+        values.skills = tempSkills;
+        dispatch(showloading());
+        const response = await axios.post("/api/portfolio/add-experience", {
+          values
+        });
 
-  //       dispatch(hideloading());
+        dispatch(hideloading());
 
-  //       if(response.data.success) {
-  //          message.success(response.data.message)
-  //       } else {
-  //         message.error(response.data.message);
-  //       }
-  //     } catch (error) {
-  //       message.error(error.message);
-  //     }
-  //   };
+        if(response.data.success) {
+           message.success(response.data.message)
+        } else {
+          message.error(response.data.message);
+        }
+      } catch (error) {
+        message.error(error.message);
+      }
+    };
 
   return (
     <div>
@@ -71,7 +72,7 @@ const AdminExperience = () => {
               footer={null}
               onCancel={() => setshowAddEditModal(false)}
             >
-              <Form layout="vertical">
+              <Form layout="vertical" onFinish={onFinish}>
                 <Form.Item name="period" label="Period">
                   <Input placeholder="Period" />
                 </Form.Item>
