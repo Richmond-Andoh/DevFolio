@@ -1,7 +1,7 @@
 import Experience from "../modules/EducationSchema.js"
 
 
-const addExperience = async(req, res) => {
+export const addExperience = async(req, res) => {
     try {
         const experience = new Experience(req.body);
         await experience.save();

@@ -2,7 +2,7 @@
 import { Form, Input, Modal, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { showloading, hideloading } from "../../reducer/rootSlice";
+import { showloading, hideloading, ReloadData } from "../../reducer/rootSlice";
 import axios from "axios";
 
 //import { Form, Input, message } from "antd";
@@ -31,7 +31,10 @@ const AdminExperience = () => {
         dispatch(hideloading());
 
         if(response.data.success) {
-           message.success(response.data.message)
+           message.success(response.data.message);
+           setshowAddEditModal(false);
+           dispatch(hideloading());
+           dispatch(ReloadData(true));
         } else {
           message.error(response.data.message);
         }
@@ -96,7 +99,7 @@ const AdminExperience = () => {
                   >
                     Cancel
                   </buttton>
-                  <buttton className="bg-primary-content text-white px-5 py-2 cursor-pointer">
+                  <buttton type="submit" className="bg-primary-content text-white px-5 py-2 cursor-pointer">
                     {selectedItemForEdit ? "Update" : "Add"}
                   </buttton>
                 </div>

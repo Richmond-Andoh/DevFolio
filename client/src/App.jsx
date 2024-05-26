@@ -8,13 +8,13 @@ import axios from "axios";
 import Toaster from "react-hot-toast";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { SetPortfolioData, hideloading, showloading } from "./reducer/rootSlice";
+import { ReloadData, SetPortfolioData, hideloading, showloading } from "./reducer/rootSlice";
 //import "antd/dist/antd.css";
 
 const App = () => {
   //const [showloading, setshowloading] = useState(false)
   const dispatch = useDispatch();
-  const { loading, portfolioData} = useSelector((state) =>  state.root);
+  const { loading, portfolioData, reloadData} = useSelector((state) =>  state.root);
   
   const getPortfolioData = async () => {
     try {
@@ -24,6 +24,7 @@ const App = () => {
       if (response.status === 200) {
         dispatch(SetPortfolioData(response.data));
         dispatch(hideloading());
+        dispatch(ReloadData(false))
         //const  data = await response.data;
         console.log(response.data);
         toast.success("successfull portfolio data fetch")
@@ -48,9 +49,11 @@ const App = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [portfolioData]);
   
-  // useEffect(() => {
-  //   console.log(portfolioData);
-  // }, [portfolioData])
+  useEffect(() => {
+    if(reloadData) {
+      getPortfolioData();
+    }
+  }, [reloadData])
   return (
     <BrowserRouter>
     { loading ? <Loader /> : null }
