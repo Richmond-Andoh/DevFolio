@@ -22,11 +22,10 @@ const AdminExperience = () => {
     const onFinish = async(values) => {
       try {
         const tempSkills = values.skills.split(",");
+        
         values.skills = tempSkills;
         dispatch(showloading());
-        const response = await axios.post("/api/portfolio/add-experience", {
-          values
-        });
+        const response = await axios.post("/api/portfolio/add-experience", values);
 
         dispatch(hideloading());
 
@@ -43,16 +42,18 @@ const AdminExperience = () => {
       }
     };
 
+    // grid-cols-4 gap-5 sm:grid-cols-12 md:grid-cols-6
+
   return (
     <div>
-      <div className="flex justify-end">
-        <button className="bg-primary-content px-5 py-2 text-white"
+      <div className="flex justify-end my-5">
+        <button className=" px-5 py-2 text-white bg-primary-content"
          onClick={() => ( setselectedItemForEdit(null), setshowAddEditModal(true))}
         >
           Add Experience
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid gap-5 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2">
         {experiences.map((experience) => (
           <div className="shadow-xl border border-gray-600 px-5 py-2 flex flex-col gap-3">
             <h1 className="text-white font-bold text-xl">{experience.title}</h1>
@@ -99,7 +100,7 @@ const AdminExperience = () => {
                   >
                     Cancel
                   </buttton>
-                  <buttton type="submit" className="bg-primary-content text-white px-5 py-2 cursor-pointer">
+                  <buttton type="submit" onClick={onFinish} className="bg-primary-content text-white px-5 py-2 cursor-pointer">
                     {selectedItemForEdit ? "Update" : "Add"}
                   </buttton>
                 </div>

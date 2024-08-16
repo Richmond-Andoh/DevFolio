@@ -9,7 +9,6 @@ const portfolioRouter = express.Router();
 portfolioRouter.route("/portfolio-data").get(getPortfolioData);
 
 //Update portfolio intro data route
-
 portfolioRouter.route("/update-intro").post(updateIntro);
 
 //update portfolio about data route

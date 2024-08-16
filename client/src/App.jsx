@@ -62,7 +62,7 @@ const App = () => {
         <Route path="/admin" element={ <Admin /> } />
       </Routes>
 
-      <Toaster />
+      <Toaster position="top-left"/>
     </BrowserRouter>
   )
 }

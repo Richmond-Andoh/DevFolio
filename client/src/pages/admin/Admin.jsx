@@ -11,7 +11,7 @@ const Admin = () => {
   return (
     <div className="">
       <Header />
-      <div className="mx-auto w-3/3">
+      <div className="mx-auto w-3/2">
         <div className="mt-12 px-6">
           {
             portfolioData && 

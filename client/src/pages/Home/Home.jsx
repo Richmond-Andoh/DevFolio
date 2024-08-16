@@ -16,7 +16,7 @@ const Home = () => {
       {
         portfolioData
         && (
-        <div className="px-40 sm:px-5">
+        <div className="px-40 py-0 sm:px-5">
           <Intro />
           <About />
           <Experiences />
